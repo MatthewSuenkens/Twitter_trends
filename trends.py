@@ -232,9 +232,24 @@ def find_center(polygons):
     -156.21763
     """
     "*** YOUR CODE HERE ***"
-    
-    
-
+                                                          
+    total_area = 0
+    total_x = 0
+    total_y = 0T
+                                                          
+    for shapes in polygens:
+                                                          
+        centroid = find_centroid(shape)
+        area = centroid[2]
+        total_area += centroid[2]
+        total_x += centroid[0] * area
+        total_y += centroid[1] * area
+                                                          
+    the_center_x = sum_x / total_area
+    the_center_y = sum_y / total_area
+                                                          
+    return make_position(the_center_x, the_center_y)
+        
 # Phase 3: The Mood of the Nation
 
 def find_closest_state(tweet, state_centers):
